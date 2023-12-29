@@ -1,0 +1,102 @@
+<html>
+    <head>
+        <title>Weather🌙</title>
+        <!-- <link rel="stylesheet" href="./ind.css"> -->
+        <style>
+            html, body {
+                height: 100%;
+                overflow: hidden;
+                margin: 0;
+                outline:none;
+            }
+            .submit-button{
+                font: 16px Instrument Sans, sans-serif;;
+                background-color: rgba(255, 255, 255, 0.201);
+                padding:24px;
+                padding-top:8px;
+                padding-bottom:8px;
+                border-radius:8px;
+                border:solid 0.3px rgba(0, 0, 0);
+                transition:0.29s ease-in-out;
+                backdrop-filter: blur(11px);
+                font: 500 16px Atkinson Hyperlegible, -apple-system, Roboto, Helvetica, sans-serif;
+            }
+            .submit-button:hover{
+                transform: scale(1.1);
+                border:solid 0.1px rgba(0, 0, 0, 0.53);
+                background-color: rgba(58, 58, 58, 0.564);
+                color:white;
+                box-shadow:0px 0px 5px rgba(0, 0, 0, 0.334);
+            }
+            .container{
+                display:flex;
+                justify-content: center;
+                flex-direction: column;
+                height:100vh;
+                align-items: center;
+                background-color:transparent;
+            }
+            .inn{
+                color: #000000;
+                background-color: rgba(255, 255, 255, 0.2);
+                border: solid 1px rgba(0, 0, 0, 0.119);
+                border-radius: 24px;
+                box-shadow: 0 2px 5px rgba(0, 0, 0, 0.15);
+                padding: 10px 15px;
+                font-size: 16px;
+                transition: 0.38s ease;
+                outline: none;
+                width: fit-content;
+                height:100% ;
+                backdrop-filter: blur(200px);
+                resize:none; /* maa chudaye resize  */
+            }
+            .inn:focus{
+                transform: scale(1.15);
+                box-shadow: none;
+                border-radius:8px;
+                border:solid 0.3px rgba(0, 0, 0);
+                box-shadow: inset 0 0 30px rgba(255, 255, 255, 0.404);
+
+            }
+            .idk{
+                display:flex;
+                gap:29px;
+            }
+            .temp{
+                position:abosulte;
+                left:50%;
+                color:rgb(26, 29, 48);
+                font: 700 32px Atkinson Hyperlegible, -apple-system, Roboto, Helvetica, sans-serif;
+            }
+            #bgVideo {
+                position: fixed;
+                right: 0;
+                bottom: 0;
+                min-width: 100%;
+                min-height: 100%;
+                width: auto;
+                height: auto;
+                z-index: -1;
+                transform:scale(1.05);
+                filter: blur(4px); /* Add a blur effect, adjust the value to control the blur intensity */
+                opacity: 1; /* Adjust the opacity value (0.0 to 1.0) to control transparency */
+                transition: filter 1.5s, opacity 2.9s; /* Add transitions for a smooth effect */
+            }
+        </style>
+    </head>
+    <body>
+        <video autoplay muted loop id="bgVideo">
+            <source src="<%= videoFilePath %>" type="video/mp4">
+          </video>
+        <div class="container">
+            <form action="/submit" method="POST" class="idk">
+                <input type="text" name="lat" id="lat" class="inn"placeholder="Latitude">
+                <input type="text" name="long"id="long" class="inn" placeholder="Longitude">
+                <input type="submit" value="Check" id="button" class="submit-button">
+            </form>
+            <p class="temp"><%= statement %> <%= temper %></p>
+        </div>
+        
+    </body>
+</html>
