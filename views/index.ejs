@@ -28,6 +28,26 @@
                 color:white;
                 box-shadow:0px 0px 5px rgba(0, 0, 0, 0.334);
             }
+            .submitt-button{
+                font: 16px Instrument Sans, sans-serif;;
+                background-color: rgba(255, 255, 255, 0.201);
+                padding:24px;
+                padding-top:8px;
+                padding-bottom:8px;
+                margin-bottom:5px;
+                border-radius:8px;
+                border:none;
+                transition:0.19s ease-in;
+                backdrop-filter: blur(11px);
+                font: 500 16px Atkinson Hyperlegible, -apple-system, Roboto, Helvetica, sans-serif;
+            }
+            .submitt-button:hover{
+                transform:translateY(-5px);
+                border:solid 0.1px rgba(0, 0, 0, 0.53);
+                background-color: rgba(141, 238, 255, 0.564);
+                color:white;
+                box-shadow:0px 0px 5px rgba(0, 0, 0, 0.334);
+            }
             .container{
                 display:flex;
                 justify-content: center;
@@ -90,6 +110,9 @@
             <source src="<%= videoFilePath %>" type="video/mp4">
           </video>
         <div class="container">
+            
+            <!-- <button type="button" class="submitt-button" onclick="getCurrentLocation()">Curernt</button>   -->
+            
             <form action="/submit" method="POST" class="idk">
                 <input type="text" name="lat" id="lat" class="inn"placeholder="Latitude">
                 <input type="text" name="long"id="long" class="inn" placeholder="Longitude">
@@ -97,6 +120,19 @@
             </form>
             <p class="temp"><%= statement %> <%= temper %></p>
         </div>
-        
+        <script>  /* Doesnt work beacuse HTTPS is required which is a pain in the ass to get :( ) */
+            function getCurrentLocation(event) {
+                if (navigator.geolocation) {
+                    navigator.geolocation.getCurrentPosition(showPosition);
+                } else { 
+                    alert("Geolocation is not supported by this browser.");
+                }
+            
+                function showPosition(position) {
+                    alert("Latitude: " + position.coords.latitude);
+                    alert("Longitude: " + position.coords.longitude);
+                }
+            }
+            </script>
     </body>
 </html>

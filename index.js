@@ -45,7 +45,6 @@ app.post("/submit",async(req,res)=>{
     
 
 })
-
 app.get("/",(req,res)=>{
     res.render("index.ejs",{"statement":" ","temper":" ","videoFilePath":"/home.mp4"});
 
