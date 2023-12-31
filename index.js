@@ -34,3 +34,5 @@ app.get("/",(req,res)=>{
     res.render("index.ejs",{"temper":" ","windd":"","winds":""});
 
 })
+
+
