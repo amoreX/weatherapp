@@ -22,13 +22,13 @@ app.post("/submit",async(req,res)=>{
     let w=weather.data;
     let temp=w.current.temperature_2m+"°C";
     console.log(temp);
-    console.log(w)
+    console.log(w.current.wind_speed_10m);
     // console.log(w);
     // res.json(w);
-    res.render("index.ejs",{"temper":temp,"statement":"The Temperature:"});
+    res.render("index.ejs",{"temper":temp});
     
 })
 app.get("/",(req,res)=>{
-    res.render("index.ejs",{"statement":" ","temper":" "});
+    res.render("index.ejs",{"temper":" "});
 
 })

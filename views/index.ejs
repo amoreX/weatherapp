@@ -64,10 +64,21 @@
                 gap:29px;
             }
             .temp{
-                position:abosulte;
-                left:50%;
-                color:rgb(26, 29, 48);
-                font: 700 32px Atkinson Hyperlegible, -apple-system, Roboto, Helvetica, sans-serif;
+                position:absolute;
+                top:13%;
+                left:21%;
+                padding:0px;
+                margin:none;
+                color:rgba(0, 0, 0, 0.826);
+                font: 70 72px Atkinson Hyperlegible, -apple-system, Roboto, Helvetica, sans-serif;
+            }
+            .wind{
+                position:absolute;
+                top:65%;
+                left:35%;
+                margin:none;
+                padding:0px;
+                font: 70 18px Atkinson Hyperlegible, -apple-system, Roboto, Helvetica, sans-serif;
             }
             #bgVideo {
                 position: fixed;
@@ -86,13 +97,13 @@
 
             .card{
                 position:absolute;
-                top:60%;
-                left:25%;
+                top:55%;
+                left:38%;
                 background-color: rgba(144, 164, 164, 0.518);
-                padding:360px;
-                padding-top:100px;
+                padding:150px;
+                padding-top:150px;
                 padding-bottom:150px;
-                border-radius:24px;
+                border-radius:50%;
                 border:solid 1px rgba(147, 141, 141, 0.784);
             }
         </style>
@@ -108,10 +119,10 @@
                 <input type="text" name="long"id="long" class="inn" placeholder="Longitude">
                 <input type="submit" value="Check" id="button" class="submit-button">
             </form>
-            <!-- <p class="temp"><%= statement %> <%= temper %></p> -->
         </div>
         <div class="card">
-
+            <p class="temp"><%= temper %></p>
+            <p class="wind">wind speed</p>
         </div>
     </body>
 </html>
