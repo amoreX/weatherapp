@@ -22,13 +22,15 @@ app.post("/submit",async(req,res)=>{
     let w=weather.data;
     let temp=w.current.temperature_2m+"°C";
     console.log(temp);
+    let wind=w.current.wind_speed_10m;
+    let weatherparse=wind+"Km/h";
     console.log(w.current.wind_speed_10m);
     // console.log(w);
     // res.json(w);
-    res.render("index.ejs",{"temper":temp});
-    
+    res.render("index.ejs",{"temper":temp,"windd":weatherparse,"winds":"Wind Speed"});
+
 })
 app.get("/",(req,res)=>{
-    res.render("index.ejs",{"temper":" "});
+    res.render("index.ejs",{"temper":" ","windd":"","winds":""});
 
 })

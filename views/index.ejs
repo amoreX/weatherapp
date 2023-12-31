@@ -64,9 +64,10 @@
                 gap:29px;
             }
             .temp{
+                z-index: 2;
                 position:absolute;
-                top:13%;
-                left:21%;
+                top:12%;
+                left:18%;
                 padding:0px;
                 margin:none;
                 color:rgba(0, 0, 0, 0.826);
@@ -74,11 +75,22 @@
             }
             .wind{
                 position:absolute;
-                top:65%;
-                left:35%;
+                top:70%;
+                left:38%;
                 margin:none;
                 padding:0px;
-                font: 70 18px Atkinson Hyperlegible, -apple-system, Roboto, Helvetica, sans-serif;
+                font: 70 14px Atkinson Hyperlegible, -apple-system, Roboto, Helvetica, sans-serif;
+            }
+            .windmeter{
+                z-index: 1;
+                position:absolute;
+                top:74%;
+                left:37%;
+                padding:0px;
+                margin:none;
+                color:rgba(0, 0, 0, 0.826);
+                font: 70 25px Atkinson Hyperlegible, -apple-system, Roboto, Helvetica, sans-serif;
+
             }
             #bgVideo {
                 position: fixed;
@@ -122,7 +134,8 @@
         </div>
         <div class="card">
             <p class="temp"><%= temper %></p>
-            <p class="wind">wind speed</p>
+            <p class="wind"><%=winds%></p>
+            <p class="windmeter"><%=windd%> </p>
         </div>
     </body>
 </html>
