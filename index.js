@@ -9,9 +9,10 @@ import cors from 'cors';
 const app = express();
 const port = 3000;
 const __dirname = dirname(fileURLToPath(import.meta.url));
+app.use(express.static(__dirname + '/public'));
 app.use(cors());
 
-app.use(express.static(__dirname + '/public'));
+
 
 app.use(express.urlencoded({ extended: true }));
 
