@@ -11,7 +11,7 @@ app.use(express.static('public'));
 
 app.use(bodyParser.urlencoded({extended: true}));
 
-app.listen(port, ()=>{
+app.listen(process.env.PORT || port, ()=>{
     console.log(`listening on port ${port}`);
 })
 app.post("/submit",async(req,res)=>{
